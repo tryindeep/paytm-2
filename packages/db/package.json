@@ -3,22 +3,30 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./index.ts"
-  },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/node": "^25.9.3",
     "@types/pg": "^8.20.0",
-    "prisma": "^7.8.0"
+    "prisma": "^7.8.0",
+    "tsx": "^4.22.4"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^6.0.3"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
-    "@types/dotenv": "^8.2.3",
     "dotenv": "^17.4.2",
     "pg": "^8.21.0"
+  },
+   "exports": {
+    ".": "./index.ts"
   }
 }
